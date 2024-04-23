@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Preview from './preview';
+import { BrowserRouter as Router, Routes, Route, Form } from 'react-router-dom';
+import Chat from './chat';
+import GoogleAuth from './auth';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<GoogleAuth />} />
+          <Route exact path="/dashboard" element={<Preview />} />
+          <Route path="/chat" element={<Chat />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
