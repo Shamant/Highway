@@ -31,7 +31,7 @@ const Chat = () => {
   const [newMessage, setNewMessage] = useState('');
   const messagesRef = collection(db, "messages");
   const name = localStorage.getItem("username");
-  const openai = new OpenAI({ apiKey: "sk-proj-CDR0rgVYcUGiXJBzUKnDT3BlbkFJqX2yFf4Ri7e3iwd6gEXc" , dangerouslyAllowBrowser:true});
+  const openai = new OpenAI({ apiKey: "**" , dangerouslyAllowBrowser:true});
   const messagesEndRef = useRef(null);
 
   async function main(newMessage) {
